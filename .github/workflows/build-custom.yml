@@ -74,6 +74,8 @@ jobs:
           context: .
           file: Dockerfile
           push: true
+          build-args: |
+            BRAND_NAME=UGS Hub
           tags: |
             ${{ env.REGISTRY }}/${{ steps.image_name.outputs.name }}:canary
             ${{ env.REGISTRY }}/${{ steps.image_name.outputs.name }}:${{ github.run_number }}
