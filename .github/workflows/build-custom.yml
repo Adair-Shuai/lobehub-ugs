@@ -11,6 +11,12 @@
 name: Build Custom Image
 
 on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - '.dockerignore'
   schedule:
     # 每 6 小时检查一次上游更新
     - cron: '0 */6 * * *'
