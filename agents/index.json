@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "agents": [
+    {
+      "author": "TeamAdmin",
+      "createdAt": "2026-07-02",
+      "homepage": "https://35dh5877hv55.vicp.fun",
+      "identifier": "office-assistant",
+      "knowledgeCount": 0,
+      "meta": {
+        "avatar": "💼",
+        "description": "通用办公助手，擅长文档撰写、数据分析、邮件起草、会议纪要等日常办公任务",
+        "tags": ["办公", "写作", "通用", "效率"],
+        "title": "通用办公助手",
+        "category": "office"
+      },
+      "pluginCount": 0,
+      "schemaVersion": 1,
+      "tokenUsage": 0
+    },
+    {
+      "author": "TeamAdmin",
+      "createdAt": "2026-07-02",
+      "homepage": "https://35dh5877hv55.vicp.fun",
+      "identifier": "engineering-buddy",
+      "knowledgeCount": 0,
+      "meta": {
+        "avatar": "🔧",
+        "description": "工程助手，支持 NeqSim 相平衡、pyResToolbox 储层计算等专业 MCP 工具",
+        "tags": ["工程", "储层", "相平衡", "计算"],
+        "title": "工程计算助手",
+        "category": "engineering"
+      },
+      "pluginCount": 0,
+      "schemaVersion": 1,
+      "tokenUsage": 0
+    },
+    {
+      "author": "TeamAdmin",
+      "createdAt": "2026-07-02",
+      "homepage": "https://35dh5877hv55.vicp.fun",
+      "identifier": "code-reviewer",
+      "knowledgeCount": 0,
+      "meta": {
+        "avatar": "🧑‍💻",
+        "description": "代码审查助手，能审查 PR、给出代码建议、自动修复 lint 问题",
+        "tags": ["代码", "审查", "开发", "DevOps"],
+        "title": "代码审查助手",
+        "category": "development"
+      },
+      "pluginCount": 0,
+      "schemaVersion": 1,
+      "tokenUsage": 0
+    }
+  ]
+}

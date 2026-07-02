@@ -1,0 +1,10 @@
+# 忽略临时文件
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# 允许提交 branding 下的二进制资源
+!branding/*.svg
+!branding/*.ico
+!branding/*.png

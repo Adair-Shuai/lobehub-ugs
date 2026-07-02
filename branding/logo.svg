@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <!-- UGS 占位 LOGO — 请替换为你的品牌标识 -->
+  <rect width="120" height="40" rx="8" fill="#4F46E5"/>
+  <text x="60" y="22" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="14" font-weight="bold">UGS</text>
+  <text x="60" y="33" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="system-ui,sans-serif" font-size="8">替换此 LOGO</text>
+</svg>
