@@ -1,0 +1,9 @@
+.git
+.gitignore
+.github
+README.md
+.dockerignore
+docker-compose*.yml
+branding/README.md
+skills/README.md
+skills/.gitkeep

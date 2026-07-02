@@ -1,0 +1,17 @@
+# ============================================================
+# 使用说明：
+#   将此文件复制到 E:\Lobehub\docker-compose.yml，
+#   替换原有的 lobehub 服务定义（其余服务如 postgres/redis/nginx 保持不变）。
+#
+#   或者直接在原有的 docker-compose.yml 中改一行：
+#     image: ghcr.io/YOUR_USERNAME/lobehub-ugs:canary
+# ============================================================
+
+services:
+  # 使用自定义白标镜像替换官方镜像
+  lobehub:
+    image: ghcr.io/YOUR_USERNAME/lobehub-ugs:canary
+    # ⬆ 构建成功后替换成你的 GitHub 用户名
+
+  # （你的 postgres、redis、nginx、MCP 等服务保持不变）
+  # 它们不需要任何修改，完全兼容
