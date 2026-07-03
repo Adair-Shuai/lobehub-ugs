@@ -46,17 +46,25 @@ RUN for dir in /app/public /app/public/_spa /app/public/_spa-auth; do \
 COPY branding/og-image.png /app/public/og/og.webp
 
 # ---- 4. 品牌名称替换 ----
-# 将所有 JS/HTML/JSON 中的 "LobeHub" 和 "LobeChat" 替换为自定义品牌名
-# 仅替换大写形式（品牌显示名），不影响小写的包名/URL
-# 使用 sh 兼容语法（不用 find -print0 / xargs -0，避免 alpine 兼容问题）
-RUN cd /app && \
-    find public/_spa public/_spa-auth .next/server dist \
-      -type f \( -name '*.js' -o -name '*.html' -o -name '*.json' \) \
-      -print 2>/dev/null | while read f; do \
-        sed -i "s/LobeHub/${BRAND_NAME}/g" "$f" 2>/dev/null; \
-        sed -i "s/LobeChat/${BRAND_NAME}/g" "$f" 2>/dev/null; \
+# ⚠️ 绝对不碰 .js 文件！sed 对 minified JS 做字符串替换会破坏语法
+# （例如 "LobeHub" → "UGS Hub" 在 JS 中会变成语法错误: Unexpected identifier 'Hub'）
+# 仅替换以下 HTML 文件中的品牌名（这些是模板/错误页，不含 JS 逻辑）
+RUN for f in \
+      /app/public/not-compatible.html \
+      /app/public/_dangerous_local_dev_proxy.html \
+      /app/.next/server/app/_global-error.html \
+      /app/.next/server/app/_not-found.html \
+      /app/.next/server/pages/404.html \
+      /app/.next/server/pages/500.html \
+      /app/dist/desktop/index.html \
+      /app/dist/desktop/not-compatible.html \
+      ; do \
+        if [ -f "$f" ]; then \
+          sed -i "s/LobeHub/${BRAND_NAME}/g" "$f" 2>/dev/null; \
+          sed -i "s/LobeChat/${BRAND_NAME}/g" "$f" 2>/dev/null; \
+        fi; \
       done; \
-    echo "Brand replacement done"
+    echo "Brand replacement done (HTML only, no JS touched)"
 
 # ---- 5. 预设助手（Agent 市场内建数据）----
 COPY agents/ /app/public/avatars/agents/
